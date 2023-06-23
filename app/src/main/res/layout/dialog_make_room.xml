@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/makeRoom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#FFFFBB33"
+        android:text="방 만들기"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/mainPhotoUrl"
+        style="@style/questionStyle"
+        android:hint="mainPhotoUrl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/makeRoom" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/roomTitle"
+        android:hint="title"
+        style="@style/questionStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainPhotoUrl" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/location"
+        android:hint="Location"
+        style="@style/questionStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roomTitle" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/maxMemberCount"
+        android:hint="최대 멤버숫자"
+        style="@style/questionStyle"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/location" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/maxMemberCount">
+
+        <RadioButton
+            android:id="@+id/publicRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="공개방" />
+
+        <RadioButton
+            android:id="@+id/secretRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀방" />
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/subPhotoUrlList"
+        android:hint="subPhotoUrlList"
+        style="@style/questionStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/questContent"
+        android:hint="questcontent 30자 이상"
+        style="@style/questionStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subPhotoUrlList" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="확인"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questContent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="취소"
+        app:layout_constraintBottom_toBottomOf="@id/submitButton"
+        app:layout_constraintEnd_toStartOf="@id/submitButton"
+        app:layout_constraintTop_toTopOf="@id/submitButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

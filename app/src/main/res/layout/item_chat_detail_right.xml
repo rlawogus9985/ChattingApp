@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="chatDetailRequestData"
+            type="com.example.chattingapp.data.ChatDataRequest" />
+        <variable
+            name="RightUserData"
+            type="com.example.chattingapp.data.UserData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="5dp"
+        android:paddingEnd="10dp">
+
+        <ImageView
+            android:id="@+id/detailProfileImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            ImageWithUrl="@{chatDetailRequestData.chatDetailsData != null ? chatDetailRequestData.chatDetailsData.hostInfo.mainProfileUrl : RightUserData.mainProfileUrl}"/>
+
+        <TextView
+            android:id="@+id/detailNickName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="김재현"
+            android:layout_marginEnd="5dp"
+            android:text="@{chatDetailRequestData.chatDetailsData != null ? chatDetailRequestData.chatDetailsData.hostInfo.nickName : RightUserData.nickName}"
+            app:layout_constraintTop_toTopOf="@id/detailProfileImage"
+            app:layout_constraintEnd_toStartOf="@id/detailProfileImage" />
+
+        <TextView
+            android:id="@+id/chatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="샘플 텍스트입"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            app:allChatText="@{chatDetailRequestData}"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:maxWidth="250dp"
+            android:background="@drawable/chatting_background"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintEnd_toStartOf="@id/detailProfileImage"
+            app:layout_constraintTop_toBottomOf="@id/detailNickName"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/writtenTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:textColor="@color/black"
+            tools:text="오후 9시 15분"
+            android:layout_marginEnd="7dp"
+            FormatMillis="@{chatDetailRequestData.chatDetailsData != null ? chatDetailRequestData.chatDetailsData.msgNo : chatDetailRequestData.grpChatDetailsData.msgNo}"
+            app:layout_constraintEnd_toStartOf="@id/chatTextView"
+            app:layout_constraintBottom_toBottomOf="@id/chatTextView" />
+
+        <TextView
+            android:id="@+id/readChatRemain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="9dp"
+            android:textColor="#FBC02D"
+            tools:text="2"
+            ReadCount = "@{chatDetailRequestData.chatDetailsData != null ? chatDetailRequestData.chatDetailsData.readCount : chatDetailRequestData.grpChatDetailsData.readCount}"
+            android:layout_marginEnd="7dp"
+            app:layout_constraintEnd_toStartOf="@id/chatTextView"
+            app:layout_constraintBottom_toTopOf="@id/writtenTime" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

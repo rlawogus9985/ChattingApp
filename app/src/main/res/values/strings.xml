@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ChattingApp</string>
+    <string name="group_chat_list_text">%1$s (%2$d/%3$d)</string>
+    <string name="group_chat_list_host">호스트\n%1$d</string>
+    <string name="lobby_name">%1$s  memNo : %2$d</string>
+    <string name="dialog_member_info">memNo: %1$d, %2$s</string>
+    <string name="exit_enter_text">%1$d번 님이 %2$s</string>
+    <string name="lobby_title">로비에 입장하셨습니다</string>
+    <string name="deleted_message">❕ 삭제된 메시지입니다.</string>
+    <string name="invalid_login_memberId">10001~10012사이의 숫자를 입력해주세요</string>
+    <string name="server_disconnected">서버와의 연결이 끊어졌습니다</string>
+    <string name="delete_fail_timeout">5분이 지난 채팅은 삭제할 수 없습니다</string>
+    <string name="kicked_message">강퇴당하셨습니다</string>
+</resources>

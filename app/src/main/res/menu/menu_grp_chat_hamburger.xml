@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="멤버 목록 조회"
+        android:id="@+id/viewMemberList"
+        android:icon="@drawable/ic_launcher_background"/>
+    <item android:title="방 나가기"
+        android:id="@+id/exitRoom"
+        android:icon="@drawable/ic_launcher_background"/>
+    <item
+        android:title="방 삭제하기"
+        android:id="@+id/deleteRoom"
+        android:icon="@drawable/ic_launcher_background"/>
+</menu>

@@ -1,4 +1,4 @@
-# ChattingApp
+# ChattingApp (23.05.22 ~ 23.06.23)
 ChattingApp인턴과제본. socket과 api통신을 통해 구현됨
 
 socket과 api콜한 내용은 아래와 같다.
@@ -61,7 +61,7 @@ POST : http://[address]/RqCreatePartyContext, {"partyNo": 1}, 방 생성
   
 ===========================================
 
-현재 가능한 기능. 
+## 현재 가능한 기능. 
 1. 로그인
 2. 1대1 채팅
 3. 파티(그룹) 채팅
@@ -74,12 +74,32 @@ POST : http://[address]/RqCreatePartyContext, {"partyNo": 1}, 방 생성
 10. 방 삭제
 11. 등등 ...
 
-현재 있는 버그
+## 현재 있는 버그
 1. 파티 채팅 읽음 처리를 하는 과정에서 파티 내역목록이 2번가져와지는 현상
 2. Room DB를 통해 접속기록을 확인하기 때문에 여러 다른 기기에서 접속했을때 중복 읽음 처리가 되는 현상
 3. 모든 사람이 파티 방에 들어와있을때 내가 채팅을 치면 채팅을 읽었다는 소켓통신이 한꺼번에 들어와서 비동기 과정에서 숫자가 비정상적으로 줄어드는 현상
 
-추가 하고 싶은 기능
+## 추가 하고 싶은 기능
 1. 현재 방에 내가 읽지 않은 채팅이 몇개가 있는지 표시(1대1이든, 파티방이든)
 2. 디자인 예쁘게 꾸미기
    
+## 적용된 기능
+1. MVVM
+2. Retrofit2
+3. socket.io(1.0.2)
+4. ViewBinding
+5. DataBinding
+6. BindingAdapter
+7. Glide
+8. Coroutine
+9. Flow, SharedFlow, StateFlow
+10. LiveData
+11. CustomDialog
+12. MultiViewHolder
+13. callBack ClickListener
+14. ListAdapter + DiffUtil
+15. Throttle
+16. Room
+17. EventBus
+18. ViewPager2 + FragmentStateAdapter
+19. Parcelize
